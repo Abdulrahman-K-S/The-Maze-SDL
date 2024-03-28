@@ -1,3 +1,18 @@
+/*
+ * ===================================================
+ * ===================================================
+ *                SDL Graphics Wrapper
+ *                     Revision 1
+ *
+ *            (C) 2015  Nick Stones-Havas
+ *
+ * ===================================================
+ *
+ *  C library for drawing to the screen.
+ *
+ * ===================================================
+ * ===================================================
+ */
 #ifndef GFX_H
 #define GFX_H
 
@@ -7,32 +22,49 @@
 #include <SDL2/SDL.h>
 #endif
 
-/* SDL Stuff */
-/*
-* SDL_Instance - A struct that will hold the instances of
-* the windows and it's renderer.
-* 
-* window: The window of the scene.
-* renderer: The window's renderer.
-* quit: Is the window opened or not.
+
+/*========================================================
+* Macros
+*========================================================
 */
-typedef struct SDL_Instance
-{
-	SDL_Window* window;
-	SDL_Renderer* renderer;
-	int quit;
-} SDL_Instance;
 
-/* Draw Functions */
-void setDrawColor(SDL_Instance *, int r, int g, int b, int a);
-void drawLine(SDL_Instance *,int x1, int y1, int x2, int y2);
-void fillRect(SDL_Instance *,int x, int y, int w, int h);
-void drawRect(SDL_Instance *,int x, int y, int w, int h);
+/**
+* Macro to convert from RGB color components to an ABGR integer
+*/
+#define RGBtoABGR(R,G,B)   (0xFF000000 | ((B) << 16) | ((G) << 8) | (R))
 
-/* Initialization Functinos */
-int init_instance(SDL_Instance*);
 
-/* Event Functions */
-int pollEvent();
+/*========================================================
+* Library debug functions
+*========================================================
+*/
 
-#endif
+const char* gfxGetError();
+
+
+/*========================================================
+ * GFX management functions
+ *========================================================
+ */
+
+int initGFX(char* title, unsigned int width, unsigned int height);
+void* createTexture(unsigned int width, unsigned int height);
+int destroyTexture(void* texture);
+void displayFullscreenTexture(void* texture);
+void destroyGFX();
+
+
+/*========================================================
+ * Drawing functions
+ *========================================================
+ */
+
+void setDrawColor(int r, int g, int b, int a);
+void drawLine(int x1, int y1, int x2, int y2);
+void fillRect(int x, int y, int w, int h);
+void drawRect(int x, int y, int w, int h);
+void presentRenderer();
+void clearRenderer();
+
+
+#endif /* GFX_H */
