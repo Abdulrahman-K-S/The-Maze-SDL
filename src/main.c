@@ -22,6 +22,7 @@ const short MAP[MAP_GRID_HEIGHT][MAP_GRID_WIDTH] = {
 
 
 /* Program globals */
+Uint32* screenBuffer = NULL;L;
 
 const Uint32 COLORS[4] = {
     RGBtoABGR(255, 0, 0),
@@ -155,12 +156,11 @@ int setupWindow()
             screenBuffer[(WINDOW_WIDTH * y) + x] = 0xFFAAAAAA;
         }
     }
-        
 
     return TRUE;
 }
 
-int main()
+int main() 
 {
     if (!setupWindow())
     {
