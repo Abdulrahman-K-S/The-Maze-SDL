@@ -1,16 +1,35 @@
+#include <stdlib.h>
+
+#include "config.h"
 #include "player.h"
+#include "raycaster.h"
 
-Vector3 playerPos = { PLAYER_START_X, PLAYER_START_Y, 1 };
-Vector3 playerDir = { 0, 1, 1 };
+/* Global data */
+Vector3f playerPos = { PLAYER_START_X, PLAYER_START_Y, 1 };
+Vector3f playerDir = { PLAYER_DIR_X, PLAYER_DIR_Y, 1 };
 
+/* Toggles */
 char movingForward = FALSE;
 char movingBack = FALSE;
 char turningLeft = FALSE;
 char turningRight = FALSE;
 char playerIsRunning = FALSE;
 
-void updatePlayer()
+/**
+ * rotatePlayer - Rotates the player by a given rotation matrix
+ *
+ * @rotMatrix: The rotation matrix to rotate the player
+ */
+void rotatePlayer(Matrix3f* rotMatrix)
 {
+    matrixVectorMultiply(rotMatrix, &playerDir);
+    matrixVectorMultiply(rotMatrix, &viewplaneDir);
+}
+
+/**
+ * updatePlayer - Update the player for the current frame.
+*/
+void updatePlayer() {
     float moveSpeed = PLAYER_MOVEMENT_SPEED;
 
     if (playerIsRunning)
@@ -19,13 +38,36 @@ void updatePlayer()
     if (movingForward)
     {
         movePlayer(playerDir.x * moveSpeed, playerDir.y * moveSpeed);
-    } 
+    }
     if (movingBack)
     {
         movePlayer(-1 * playerDir.x * moveSpeed, -1 * playerDir.y * moveSpeed);
     }
+    if (turningLeft)
+    {
+        rotatePlayer(&clockwiseRotation);
+        if (playerIsRunning)
+        {
+            rotatePlayer(&clockwiseRotation);
+        }
+    }
+    if (turningRight)
+    {
+        rotatePlayer(&counterClockwiseRotation);
+        if (playerIsRunning)
+        {
+            rotatePlayer(&counterClockwiseRotation);
+        }
+    }
+
 }
 
+/**
+ * movePlayer - Move the player by a given movement vector.
+ *
+ * @dx: The x component of the movement vector.
+ * @dy: The y component of the movement vector.
+*/
 void movePlayer(float dx, float dy)
 {
 
@@ -52,6 +94,15 @@ void movePlayer(float dx, float dy)
     }
 }
 
+/**
+ * clipMovement - Check if a given movement vector intersects with the world
+ *                and should be clipped.
+ *
+ * @dx: The x component of the movement vector to check.
+ * @dy: The y component of the movement vector to check.
+ *
+ * Returns: Zero if the vector should not be clipped, non-zero otherwise.
+ */
 int clipMovement(float dx, float dy)
 {
     float newx = playerPos.x + dx;
@@ -67,7 +118,8 @@ int clipMovement(float dx, float dy)
     {
         for (j = x1; j <= x2; j++)
         {
-            if (i < 0 || j < 0 || i > MAP_GRID_HEIGHT || j > MAP_GRID_WIDTH || maze[i][j] > 0)
+            if (i < 0 || j < 0 || i > MAP_GRID_HEIGHT ||
+                j > MAP_GRID_WIDTH || MAP[i][j] > 0)
             {
                 return TRUE;
             }
@@ -76,20 +128,20 @@ int clipMovement(float dx, float dy)
     return FALSE;
 }
 
-void drawPlayer(SDL_Instance* instance)
-{
-	COLOR_WHITE(instance->renderer);
-	fillRect(instance, playerPos.x, playerPos.y, 5, 5);
-}
-
+/**
+ * initPlayer - Initialize the player.
+*/
 void initPlayer()
 {
     int row, col;
 
     /* Search for player position in map */
-    for (row = 0; row < MAP_GRID_HEIGHT; row++) {
-        for (col = 0; col < MAP_GRID_WIDTH; col++) {
-            if (maze[row][col] == P) {
+    for (row = 0; row < MAP_GRID_HEIGHT; row++)
+    {
+        for (col = 0; col < MAP_GRID_WIDTH; col++)
+        {
+            if (MAP[row][col] == P)
+            {
                 playerPos.x = (WALL_SIZE * col) + (WALL_SIZE / 2.0f);
                 playerPos.y = (WALL_SIZE * row) + (WALL_SIZE / 2.0f);
                 break;

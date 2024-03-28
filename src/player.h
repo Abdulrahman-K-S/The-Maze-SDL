@@ -1,8 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "config.h"
-#include "gfx.h"
+#include "linalg.h"
 
 /* Toggles */
 extern char movingForward;
@@ -12,14 +11,14 @@ extern char turningRight;
 extern char playerIsRunning;
 
 /* Player position */
-Vector3 playerPos;
-Vector3 playerDir;
+Vector3f playerPos;
+Vector3f playerDir;
 
 /* Functions */
+void rotatePlayer(Matrix3f* rotMatrix);
 void updatePlayer();
 void movePlayer(float dx, float dy);
-int clipMovement(float dx, float dy)
-void drawPlayer(SDL_Instance* instance);
+int clipMovement(float dx, float dy);
 void initPlayer();
 
 #endif
