@@ -12,7 +12,14 @@
 /* A 2D homogeneous matrix */
 #define HOMOGENEOUS_V3 {0, 0, 1}
 
-/* Types */
+/**
+ * Vector3f - A struct that holds the 3d dimensional float variables
+ *            needed.
+ *
+ * @x: The x component
+ * @y: The y component
+ * @z: The z component
+*/
 typedef struct {
     float x;
     float y;
