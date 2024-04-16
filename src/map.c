@@ -22,18 +22,18 @@ void renderMap()
         for (col = 0; col < MAP_GRID_WIDTH; col++)
 		{
             switch (MAP[row][col])
-			{
+            {
             case R:
-                setDrawColor(255, 0, 0, 255);
+                setDrawColor(255, 108, 80, 255);
                 break;
             case G:
                 setDrawColor(0, 255, 0, 255);
                 break;
             case B:
-                setDrawColor(0, 0, 255, 255);
+                setDrawColor(66, 52, 248, 255);
                 break;
             case W:
-                setDrawColor(128, 128, 128, 255);
+                setDrawColor(228, 232, 238, 255);
                 break;
             default:
                 setDrawColor(255, 255, 255, 255);
