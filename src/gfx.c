@@ -14,7 +14,7 @@
  * ===================================================
  */
 #include <stdio.h>
-#include "./header/gfx.h"
+#include "../header/gfx.h"
 
  /* Used to identify a texture structure in memory */
 #define TEX_TAG 0x55AA
