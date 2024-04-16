@@ -11,9 +11,9 @@ const short MAP[MAP_GRID_HEIGHT][MAP_GRID_WIDTH] = {
     {B,B,B,B,B,B,B,B,B,B},
     {B,0,0,0,0,0,0,0,0,B},
     {B,0,0,R,R,0,0,0,0,B},
-    {B,0,0,R,G,0,0,0,0,B},
+    {B,0,0,R,0,0,0,0,0,B},
     {B,0,0,0,0,0,0,0,0,B},
-    {B,0,0,0,0,G,R,0,0,B},
+    {B,0,0,0,0,0,R,0,0,B},
     {B,0,0,0,0,R,R,0,0,B},
     {B,0,0,0,0,0,0,0,0,B},
     {B,0,0,0,0,0,0,0,0,B},
@@ -22,13 +22,13 @@ const short MAP[MAP_GRID_HEIGHT][MAP_GRID_WIDTH] = {
 
 
 /* Program globals */
-Uint32* screenBuffer = NULL;L;
+Uint32* screenBuffer = NULL;
 
 const Uint32 COLORS[4] = {
-    RGBtoABGR(255, 0, 0),
-    RGBtoABGR(0, 255, 0),
-    RGBtoABGR(0, 0, 255),
-    RGBtoABGR(128, 128, 128)
+    RGBtoABGR(255, 108, 80), // Red
+    RGBtoABGR(0, 255, 0), // Green
+    RGBtoABGR(66, 52, 248), // Blue
+    RGBtoABGR(228, 232, 238) // Off White
 };
 
 /* Program toggles */
