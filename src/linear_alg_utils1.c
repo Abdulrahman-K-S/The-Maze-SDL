@@ -1,4 +1,4 @@
-#include "./header/linalg.h"
+#include "../header/linalg.h"
 
 /**
  * vectorAdd - Add two 2D homogeneous vectors.

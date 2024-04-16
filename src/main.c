@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "./header/config.h"
-#include "./header/raycaster.h"
-#include "./header/renderer.h"
-#include "./header/player.h"
-#include "./header/map.h"
+#include "../header/config.h"
+#include "../header/raycaster.h"
+#include "../header/renderer.h"
+#include "../header/player.h"
+#include "../header/map.h"
 
 const short MAP[MAP_GRID_HEIGHT][MAP_GRID_WIDTH] = {
     {B,B,B,B,B,B,B,B,B,B},

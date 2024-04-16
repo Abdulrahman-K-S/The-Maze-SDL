@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
-#include "./header/config.h"
-#include "./header/player.h"
-#include "./header/raycaster.h"
+#include "../header/config.h"
+#include "../header/player.h"
+#include "../header/raycaster.h"
 
 /* Global data */
 Vector3f playerPos = { PLAYER_START_X, PLAYER_START_Y, 1 };

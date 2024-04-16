@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-#include "./header/config.h"
-#include "./header/map.h"
-#include "./header/player.h"
-#include "./header/raycaster.h"
+#include "../header/config.h"
+#include "../header/map.h"
+#include "../header/player.h"
+#include "../header/raycaster.h"
 
 /**
  * renderMap - This function renders the map when the user presses
