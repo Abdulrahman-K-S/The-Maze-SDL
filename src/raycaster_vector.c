@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "raycaster.h"
-#include "player.h"
+#include "./header/raycaster.h"
+#include "./header/player.h"
 
 /* Globals */
 Vector3f viewplaneDir = { VIEWPLANE_DIR_X, VIEWPLANE_DIR_Y, 1 };

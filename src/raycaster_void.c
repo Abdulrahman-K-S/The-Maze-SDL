@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "raycaster.h"
-#include "player.h"
+#include "./header/raycaster.h"
+#include "./header/player.h"
 
 /**
  * initializeRayDirections - Initialize rays as a set of normalized vectors,

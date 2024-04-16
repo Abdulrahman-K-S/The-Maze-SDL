@@ -1,9 +1,9 @@
 #include <stdlib.h>
 
-#include "config.h"
-#include "renderer.h"
-#include "raycaster.h"
-#include "player.h"
+#include "./header/config.h"
+#include "./header/renderer.h"
+#include "./header/raycaster.h"
+#include "./header/player.h"
 
 /**
  * calculateDrawHeight - Calculate the draw height of a pixel column for a

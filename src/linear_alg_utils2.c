@@ -1,4 +1,4 @@
-#include "linalg.h"
+#include "./header/linalg.h"
 
 /**
  * homogeneousVectorMagnitude - Get the magnitude of a homogeneous 2D vector.
