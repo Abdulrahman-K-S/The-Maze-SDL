@@ -30,6 +30,22 @@ After compiling the program, now you can just run the executable by using this c
 # Usage
 Now we have the program compiled and running what does the program offer? Well let me take you through the controls.
 
+### Change View Direction
+Being able to look around is always a blessing. This feature aids the player in being able to look around in the environment they're in. Keybinds:
+
+1. `a`: Look towards the left.
+2. `d`: Look towards the right.
+
+<img src="imgs/Keybinds - A D.gif" alt="Show/Unshow Minimap" width="350">
+
+### Movement!
+Won't be a movement game without any movement features now would it? This feature allows the player the ability to walk forword or backword according to their preference. Keybinds:
+
+1. `w`: Move forwards.
+2. `s`: Move backwards.
+
+<img src="imgs/Keybinds - W S.gif" alt="Show/Unshow Minimap" width="350">
+
 ### Show/Unshow Minimap
 The maze is vast and navigating through it sometimes proves to be tuff, which is why having this feature eases navigation plus viewing the maze. Keybind:
 
