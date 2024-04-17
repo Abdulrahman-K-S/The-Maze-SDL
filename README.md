@@ -70,4 +70,5 @@ How this is implemented is that it basically either increase or decrease the num
 # Authors
 Abdulrahman Khaled (AK-Salah@outlook.com)
 
-# Licensing
+# MIT Licensing
+Anyone is welcome to do as they please with the content of this project, only under the condition of mentioning me when it is used.
