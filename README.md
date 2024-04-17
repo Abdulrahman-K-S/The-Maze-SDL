@@ -20,12 +20,16 @@ Check the project landing page [here](https://bebo-k-s.github.io/).
 As for installating and using program you'll first need to compile the program into an executable by using this command:
 
 ```
+gcc header/* src/* -o maze -lSDL2
 ```
 
 After compiling the program, now you can just run the executable by using this command & watch the magic happen:
 
 ```
+./maze
 ```
+
+Best used on Visual Studio 2022 for better experience!
 
 # Usage
 Now we have the program compiled and running what does the program offer? Well let me take you through the controls.
