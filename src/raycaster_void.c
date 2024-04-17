@@ -76,7 +76,7 @@ void extendRaysToFirstHit(RayTuple* rays)
 }
 
 /**
- * rayCast Cast a list of prepared rays into the world.
+ * rayCast - Cast a list of prepared rays into the world.
  *
  * @rays: The list of rays to cast.
 */
