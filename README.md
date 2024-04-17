@@ -17,8 +17,39 @@ This repository documents my attempts on tackling such a challenge and using all
 Check the project landing page [here](https://bebo-k-s.github.io/).
 
 # Installation
+As for installating and using program you'll first need to compile the program into an executable by using this command:
+
+```
+```
+
+After compiling the program, now you can just run the executable by using this command & watch the magic happen:
+
+```
+```
 
 # Usage
+Now we have the program compiled and running what does the program offer? Well let me take you through the controls.
+
+### Show/Unshow Minimap
+The maze is vast and navigating through it sometimes proves to be tuff, which is why having this feature eases navigation plus viewing the maze. Keybind:
+
+1. `m`: Show/Unshow the minimap
+
+Helps in viewing the whole maze and checking what lies beyond what the player can see and displays the rays shot from the player showing what is visible and what's not visible to the player. 
+
+<img src="imgs/Keybinds - M.gif" alt="Show/Unshow Minimap" width="350">
+
+### Change FOV
+How about changing your field of view; well you can do that by clicking one of 2 buttons:
+
+1. `[`: Increases the FOV.
+2. `]`: Decreases the FOV.
+
+How this is implemented is that it basically either increase or decrease the number of rays shot from the player onto the world, which simulates changing the field of view of the player.
+
+<img src="imgs/Keybinds - [ ].gif" alt="Change Field of View" width="350">
+
+<br>
 
 # Authors
 Abdulrahman Khaled (AK-Salah@outlook.com)
