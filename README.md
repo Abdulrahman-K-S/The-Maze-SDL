@@ -14,7 +14,7 @@ While I was viewing my ideas for this project I came across The Maze project and
 
 This repository documents my attempts on tackling such a challenge and using all the resources available to finish it on time.
 
-Check the project landing page [here](https://bebo-k-s.github.io/).
+Check the project landing page [here](https://abdulrahman-k-s.github.io/).
 
 # Installation
 As for installating and using program you'll first need to compile the program into an executable by using this command:
